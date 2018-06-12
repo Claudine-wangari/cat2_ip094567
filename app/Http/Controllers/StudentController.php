@@ -17,12 +17,12 @@ class StudentController extends Controller
     {
       $this->validate($request,[
           'studentNumber' => 'bail|required|unique:students,student_number|integer',
-          'fullname' => 'required',
+          'fullName' => 'required',
           'DOB' => 'required|date',
           'address' => 'required',
         ],[
           'studentNumber.unique' => ' The Student Number already exists.',
-          'fullname.required' => ' The full name of the student is required.',
+          'fullName.required' => ' The full name of the student is required.',
           'DOB.required' => ' The Date of birth is required.',
           'DOB.date' => ' Kindly select a date.',
           'address.required' => ' The student address is required.',

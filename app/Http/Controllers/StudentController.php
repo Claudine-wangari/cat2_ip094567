@@ -16,7 +16,7 @@ class StudentController extends Controller
     public function register(Request $request)
     {
       $this->validate($request,[
-          'studentNumber' => 'bail|required|unique:students,student_number|integer',
+          'studentNumber' => 'bail|required|unique:students,student_number|numeric',
           'fullName' => 'required',
           'DOB' => 'required|date',
           'address' => 'required',
@@ -37,7 +37,6 @@ class StudentController extends Controller
       
       
       $student->save();
-      dd('Student has successfully been registered');
       return redirect('/');
     }
 }
